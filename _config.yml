@@ -1,6 +1,6 @@
 title: "SSH Autonomous Driving AI Challenge"
 description: "自動運転AIチャレンジの活動記録"
-theme: minima 
+theme: jekyll-theme-cayman
 url: "https://SSH-autonomous-driving-aichallenge.github.io"
 baseurl: "" 
 
