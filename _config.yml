@@ -1,17 +1,6 @@
 title: "SSH Autonomous Driving AI Challenge"
 description: "自動運転AIチャレンジの活動記録"
-theme: minima  # シンプルで見やすい公式テーマ
+theme: minima 
 url: "https://SSH-autonomous-driving-aichallenge.github.io"
-baseurl: ""    # ← ユーザーサイトなので空
+baseurl: "" 
 
-markdown: kramdown
-highlighter: rouge
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-
-# ナビゲーションメニューを作る
-header_pages:
-  - about.md
-  - team.md
-  - results/2025.md
