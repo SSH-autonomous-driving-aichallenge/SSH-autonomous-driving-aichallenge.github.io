@@ -28,24 +28,46 @@ description: "自動運転AIチャレンジの活動記録"
   <p>{{ page.description }}</p>
 
   <script>
-    C=0
-    draw=_=>{
-      createCanvas(W=720,W)
-      background(255) // ← 背景を白で塗りつぶす
-      stroke(0)       // ← 線を黒に
-      D=x=y=W/2
-      for(i=C++;i<C+150;i++){
-        x+=cos(noise(i*.01)*PI*9)*5
-        D*=.965
-        line(x+D,y+D,x-D,y+D)
-        if(i%32==0){
-          for(j of[-D,D]){
-            line(X=x+j*1.5,y-D,X,y+D)
-            line(X,y-D,X-j/2,y-D*1.2)
+    let C = 0;
+    let carX, carY, W = 720;
+  
+    draw = _ => {
+      createCanvas(W, W);
+      background(255);  // 背景を白
+      stroke(0);        // 線を黒
+      noFill();
+  
+      let D = x = y = W / 2;
+      let prevX = x, prevY = y;
+  
+      // 線を描画
+      for (let i = C++; i < C + 150; i++) {
+        x += cos(noise(i * 0.01) * PI * 9) * 5;
+        D *= 0.965;
+        line(x + D, y + D, x - D, y + D);
+  
+        if (i % 32 == 0) {
+          for (let j of [-D, D]) {
+            line(X = x + j * 1.5, y - D, X, y + D);
+            line(X, y - D, X - j / 2, y - D * 1.2);
           }
         }
+  
+        prevX = x;
+        prevY = y;
       }
-    }
+  
+      // 車の位置をノイズから計算
+      carX = W / 2 + cos(noise(C * 0.01) * PI * 9) * 5 * (C % 150);
+      carY = W / 2 + sin(noise(C * 0.01) * PI * 9) * 2 * (C % 150) * 0.02;
+  
+      // 車を描画（赤い四角）
+      noStroke();
+      fill(255, 0, 0);
+      rectMode(CENTER);
+      rect(carX, carY, 20, 10, 3); // 小さな赤い車
+    };
   </script>
+  
 </body>
 </html>
