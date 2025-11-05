@@ -1,5 +1,5 @@
 ---
-title: "Aページ"
+title: "SSH Note"
 ---
 
 # Aページ
