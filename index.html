@@ -1,0 +1,35 @@
+---
+title: "SSH Autonomous Driving AI Challenge"
+description: "自動運転AIチャレンジの活動記録"
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+</head>
+<body>
+
+<h1>{{ page.title }}</h1>
+<p>{{ page.description }}</p>
+
+<!-- p5.jsが描画するキャンバス -->
+<div id="p5-container"></div>
+
+<script>
+function setup() {
+  let canvas = createCanvas(400, 400);
+  canvas.parent("p5-container");
+}
+
+function draw() {
+  background(240);
+  fill(255, 0, 0);
+  ellipse(width/2, height/2, 100);
+}
+</script>
+
+</body>
+</html>
