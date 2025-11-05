@@ -9,27 +9,40 @@ description: "自動運転AIチャレンジの活動記録"
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      text-align: center;
+      font-family: sans-serif;
+    }
+    canvas {
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
 </head>
 <body>
+  <h1>{{ page.title }}</h1>
+  <p>{{ page.description }}</p>
 
-<h1>{{ page.title }}</h1>
-<p>{{ page.description }}</p>
-
-<!-- p5.jsが描画するキャンバス -->
-<div id="p5-container"></div>
-
-<script>
-function setup() {
-  let canvas = createCanvas(400, 400);
-  canvas.parent("p5-container");
-}
-
-function draw() {
-  background(240);
-  fill(255, 0, 0);
-  ellipse(width/2, height/2, 100);
-}
-</script>
-
+  <script>
+    C=0
+    draw=_=>{
+      createCanvas(W=720,W)
+      D=x=y=W/2
+      for(i=C++;i<C+150;i++){
+        x+=cos(noise(i*.01)*PI*9)*5
+        D*=.965
+        line(x+D,y+D,x-D,y+D)
+        if(i%32==0){
+          for(j of[-D,D]){
+            line(X=x+j*1.5,y-D,X,y+D)
+            line(X,y-D,X-j/2,y-D*1.2)
+          }
+        }
+      }
+    }
+  </script>
 </body>
 </html>
