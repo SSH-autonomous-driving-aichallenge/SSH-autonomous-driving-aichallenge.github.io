@@ -1,2 +1,2 @@
 # 目次
-a
+[docs/cui ページはこちら](/docs/cui)
